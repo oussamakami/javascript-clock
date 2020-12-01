@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@400;600&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Palanquin Dark', sans-serif;
+    color: #fff;
 }
 body{
     height: 100vh;
@@ -18,7 +21,7 @@ body{
     border: 5vw solid #fff;
     position: relative;
     min-height: 520px;
-    min-width: 850px;
+    min-width: 930px;
     box-shadow: 0px 25px 25px rgba(0,0,0,.3);
     padding: 20px;
     display: flex;
@@ -48,21 +51,118 @@ body{
     box-shadow: inset 0 0 5px rgba(0,0,0,.1);
 }
 
+/* start clock styling */
 
 #clock {
     height: 100%;
-    width: 50%;
+    width: 45.91%;
+    margin-left: 25px;
+    position: relative;
+    display: grid;
+    place-items: center;
 }
+#clock::before {
+    content: "";
+    display: block;
+    height: .8vw;
+    width: .8vw;
+    background-color: #ddd;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 10;
+    min-width: 12px;
+    min-height: 12px;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+}
+.num {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    --angle: 0;
+    transform: rotate(var(--angle));
+}
+.n11 {--angle: 330deg;}
+#num11 {--counter-angle:-330deg;}
+
+.n10 {--angle: 300deg;}
+#num10 {--counter-angle:-300deg;}
+
+.n9  {--angle: 270deg;}
+#num9 {--counter-angle:-270deg;}
+
+.n8  {--angle: 240deg;}
+#num8 {--counter-angle:-240deg;}
+
+.n7  {--angle: 210deg;}
+#num7 {--counter-angle:-210deg;}
+
+.n6  {--angle: 180deg;}
+#num6 {--counter-angle:-180deg;}
+
+.n5  {--angle: 150deg;}
+#num5 {--counter-angle:-150deg;}
+
+.n4  {--angle: 120deg;}
+#num4 {--counter-angle:-120deg;}
+
+.n3  {--angle: 90deg;}
+#num3 {--counter-angle:-90deg;}
+
+.n2  {--angle: 60deg;}
+#num2 {--counter-angle:-60deg;}
+
+.n1  {--angle: 30deg;}
+#num1 {--counter-angle:-30deg;}
+
+.num > p {
+    --counter-angle: 0;
+    transform: rotate(var(--counter-angle));
+    font-size: 2.2vw;
+}
+
+.hands {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+#hours-hand {
+    height: 10vw;
+    min-height: 130px;
+}
+#hour {
+    width: 9px;
+    height: 5vw;
+    background-color: #fff;
+    border-radius: 5px;
+    transform-origin: bottom center;
+    min-height: 65px;
+}
+#minute-hand {
+    height: 14vw;
+    min-height: 200px;
+}
+#minute {
+    width: 5px;
+    height: 7vw;
+    background-color: #fff;
+    border-radius: 5px;
+    transform-origin: bottom center;
+    min-height: 100px;
+    transform: rotate(140deg);
+}
+/* end clock styling */
+
 #date-info {
     height: 100%;
     width: 50%;
 }
 
 
-
-@media all and (max-width: 1300px){
+@media all and (max-width: 1450px){
     #container {
         border: 70px solid #fff;
+        min-width: 850px;
     }
     #container::after {
         height: 25px;
@@ -74,5 +174,18 @@ body{
         border: 60px solid #f8f8f8;
         top: -60px;
         left: -60px;
+    }
+    #clock {
+        width: 55.74%;
+        margin-left: 0;
+    }
+    .num > p {
+        font-size: 34px;
+    }
+    #hour {
+        width: 6px;
+    }
+    #minute {
+        width: 4px;
     }
 }
