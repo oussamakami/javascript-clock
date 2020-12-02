@@ -5,6 +5,9 @@
     box-sizing: border-box;
     font-family: 'Palanquin Dark', sans-serif;
     color: #fff;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 }
 body{
     height: 100vh;
@@ -149,7 +152,6 @@ body{
     border-radius: 5px;
     transform-origin: bottom center;
     min-height: 100px;
-    transform: rotate(140deg);
 }
 /* end clock styling */
 
