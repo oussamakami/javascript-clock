@@ -38,6 +38,54 @@ const displayDate = date => {
     dateOutput.innerHTML = `${weekDay(date)},<br/>${monthName(date)} ${dayNumber}`;
 }
 
+
+const getUserLocation = async () => {
+    let connection = await fetch('https://extreme-ip-lookup.com/json/', {cache: "no-cache"});
+    if (connection.ok){
+        let response = await connection.json(),
+            location = `${response.city}, ${response.country}`
+        return location;
+    }else {
+        return false;
+    }
+}
+
+const getWeatherInfo = () => {
+    return getUserLocation().then(async location => {
+        if (!location){
+            return false;
+        }
+        let connection = await fetch(`http://api.weatherapi.com/v1/current.json?key=38a5051e7ce6493f86c50549200212&q=${location}`, {cache: "no-cache"});
+
+        if(connection.ok){
+            let response = await connection.json(),
+                info = response.current;
+            return info;
+        }else {
+            return false;
+        }
+    });
+}
+
+const printWeatherInfo = () => {
+    getWeatherInfo().then(info =>{
+        if (!info){
+            return false;
+        }
+        const icon = document.getElementById("weather-icon"),
+              temp = document.getElementById("weather-temp"),
+              parent = document.getElementById("weather");
+
+        icon.src = info.condition.icon;
+        icon.alt = info.condition.text;
+        icon.title = info.condition.text;
+        temp.innerHTML = `${info.temp_c}°`;
+        setTimeout(() => {
+            parent.style.display = "flex";
+        }, 500);
+    })
+}
+
 window.addEventListener("load", () => {
     setInterval(() => {
         let dd = new Date();
@@ -45,4 +93,5 @@ window.addEventListener("load", () => {
     }, 100);
     let dd = new Date();
     displayDate(dd);
+    printWeatherInfo();
 })

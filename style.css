@@ -10,8 +10,9 @@
     -webkit-user-select: none;
 }
 body{
+    --bgColor: #9468b3;
     height: 100vh;
-    background-color: #b492cc;
+    background-color: var(--bgColor);
     overflow: auto;
     display: grid;
     place-items: center;
@@ -19,7 +20,7 @@ body{
 #container {
     height: 35vw;
     width: 62vw;
-    background-color: #b492cc;
+    background-color: var(--bgColor);
     border-radius: 125px;
     border: 5vw solid #fff;
     position: relative;
@@ -134,7 +135,7 @@ body{
     min-height: 130px;
 }
 #hour {
-    width: 9px;
+    width: 8px;
     height: 5vw;
     background-color: #fff;
     border-radius: 5px;
@@ -158,14 +159,30 @@ body{
 #date-info {
     height: 100%;
     width: 50%;
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-#date-info > #date-text {
+#date-text {
     font-size: 3.5em;
     line-height: 1em;
 }
-
+#weather {
+    margin-right: 15px;
+    display: none;
+}
+#weather-icon {
+    width: 5vw;
+    height: 5vw;
+    max-width: 100px;
+    max-height: 100px;
+    min-width: 85px;
+    min-height: 85px;
+}
+#weather-temp {
+    font-size: 3em;
+}
 
 @media all and (max-width: 1450px){
     #container {
