@@ -158,6 +158,12 @@ body{
 #date-info {
     height: 100%;
     width: 50%;
+    display: grid;
+    place-items: center;
+}
+#date-info > #date-text {
+    font-size: 3.5em;
+    line-height: 1em;
 }
 
 
