@@ -80,9 +80,8 @@ const printWeatherInfo = () => {
         icon.alt = info.condition.text;
         icon.title = info.condition.text;
         temp.innerHTML = `${info.temp_c}°`;
-        setTimeout(() => {
-            parent.style.display = "flex";
-        }, 500);
+
+        icon.addEventListener('load', () => parent.style.display = "flex");
     })
 }
 
