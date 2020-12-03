@@ -64,6 +64,8 @@ body{
     position: relative;
     display: grid;
     place-items: center;
+    max-width: 450px;
+    max-height: 450px;
 }
 #clock::before {
     content: "";
@@ -80,7 +82,6 @@ body{
 }
 .num {
     height: 100%;
-    width: 100%;
     position: absolute;
     text-align: center;
     --angle: 0;
@@ -212,5 +213,8 @@ body{
     }
     #minute {
         width: 4px;
+    }
+    #date-text {
+        font-size: 2.5em;
     }
 }
