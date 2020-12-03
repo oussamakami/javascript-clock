@@ -222,3 +222,34 @@ body{
         font-size: 2.5em;
     }
 }
+@media all and (max-width: 900px) {
+    #container::after, #container::before {
+        display: none;
+    }
+    #container {
+        border: none;
+        box-shadow: none;
+        align-items: center;
+    }
+    #clock {
+        max-height: 320px;
+        max-width: 350px;
+        margin-right: 4vw;
+    }
+}
+@media all and (max-width: 750px) {
+    #container {
+        min-width: auto;
+        height: 100vh;
+        width: 100vw;
+        flex-direction: column;
+    }
+    #clock {
+        margin: auto;
+        min-height: 300px;
+    }
+    #date-info {
+        text-align: center;
+        margin: auto;
+    }
+}
