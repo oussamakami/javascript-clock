@@ -55,7 +55,7 @@ const getWeatherInfo = () => {
         if (!location){
             return false;
         }
-        let connection = await fetch(`http://api.weatherapi.com/v1/current.json?key=38a5051e7ce6493f86c50549200212&q=${location}`, {cache: "no-cache"});
+        let connection = await fetch(`https://api.weatherapi.com/v1/current.json?key=38a5051e7ce6493f86c50549200212&q=${location}`, {cache: "no-cache"});
 
         if(connection.ok){
             let response = await connection.json(),
