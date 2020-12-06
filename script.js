@@ -67,6 +67,25 @@ const getWeatherInfo = () => {
     });
 }
 
+const printTempInfo = scale => {
+    getWeatherInfo().then(info => {
+        if (!info){
+            return false;
+        }
+        const temp = document.getElementById("weather-temp");
+        switch (scale){
+            default:
+            case "c":
+                temp.innerHTML = `${info.temp_c}°c`;
+                temp.title = "Celsius";
+                break;
+            case "f":
+                temp.innerHTML = `${info.temp_f}°f`;
+                temp.title = "Fahrenheit";
+        }
+    })
+}
+
 const printWeatherInfo = () => {
     getWeatherInfo().then(info =>{
         if (!info){
@@ -79,10 +98,17 @@ const printWeatherInfo = () => {
         icon.src = info.condition.icon;
         icon.alt = info.condition.text;
         icon.title = info.condition.text;
-        temp.innerHTML = `${info.temp_c}°`;
+        printTempInfo('c');
 
         icon.addEventListener('load', () => parent.style.display = "flex");
+        temp.addEventListener('click', switchTempScale);
     })
+}
+
+const switchTempScale = () => {
+    const temp = document.getElementById("weather-temp");
+
+    temp.title[0] == "C" ? printTempInfo('f') : printTempInfo('c');
 }
 
 window.addEventListener("load", () => {

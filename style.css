@@ -168,6 +168,7 @@ body{
     align-items: center;
     flex-direction: column;
     text-shadow: 2px 2px 10px rgba(0,0,0,.5);
+    z-index: 14;
 }
 #date-text {
     font-size: 3.5em;
@@ -187,6 +188,8 @@ body{
 }
 #weather-temp {
     font-size: 3em;
+    margin-left: 10px;
+    cursor: pointer;
 }
 
 @media all and (max-width: 1450px){
