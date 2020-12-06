@@ -1,8 +1,5 @@
-const minuteHand = document.getElementById('minute'),
-      hourHand = document.getElementById('hour');
-
-
 const rotateMin = date => {
+    const minuteHand = document.getElementById('minute');
     let secVal = date.getSeconds(),
         degFromSeconds = .1 * secVal,
         minuteVal = date.getMinutes();
@@ -13,6 +10,7 @@ const rotateMin = date => {
 }
 
 const rotateHour = (date, minuteVal) => {
+    const hourHand = document.getElementById('hour');
     let degFromMin = .5 * minuteVal,
         hourVal = date.getHours();
 
