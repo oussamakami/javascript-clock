@@ -1,5 +1,5 @@
 # Javascript clock
-this clock is powered by javascript and its able to return the time and some informations about the present-day like the weather and current temperature.
+this clock is powered with javascript and its able to return the time and some informations about the present-day like the weather and current temperature.
 # Screenshots
 * ### Laptop Screenshot 
 ![Laptops Preview](https://raw.githubusercontent.com/oussamakami/javascript-clock/master/imgs/laptops-prev.png)
@@ -29,7 +29,7 @@ this clock is powered by javascript and its able to return the time and some inf
 * Return The Current **Time**
 * Return The Current **Date**
 * Return The **Weather**
-* Return The **Temperature** in Celcius
+* Return The **Temperature** in both Celcius and Fahrenheit (click to toggle)
 
 # API Reference
 * [Weather API](https://www.weatherapi.com/docs/ "WeatherAPI")
