@@ -38,7 +38,7 @@ const displayDate = date => {
 
 
 const getUserLocation = async () => {
-    let connection = await fetch('https://extreme-ip-lookup.com/json/');
+    let connection = await fetch('http://ip-api.com/json/');
     if (connection.ok){
         let response = await connection.json(),
             location = `${response.city}, ${response.country}`

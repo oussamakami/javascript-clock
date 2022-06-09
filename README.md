@@ -33,7 +33,7 @@ this clock is powered with javascript and its able to return the time and some i
 
 # API Reference
 * [Weather API](https://www.weatherapi.com/docs/ "WeatherAPI")
-* [Extreme-IP-Lookup](http://extreme-ip-lookup.com/ "Extreme IP Lookup")
+* [IP-API](https://ip-api.com/ "IP-API")
 
 # License
  This Project Is Licensed Under **WTFPL**
